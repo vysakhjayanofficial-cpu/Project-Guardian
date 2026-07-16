@@ -1,0 +1,67 @@
+# OS / System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.ipynb_checkpoints/
+.project
+.pydevproject
+.settings/
+
+# Python environment and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.local
+.env.*.local
+
+# Frontend packages and build outputs
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Backend specific local assets and database state
+backend/medical_review.duckdb
+backend/patient_assets/
+backend/chroma_db/
+backend/scratch/
+backend/tasks
+
+# Fine-Tuning massive source data and training outputs
+fine_tuning/datasets/faers_xml/XML/
+fine_tuning/datasets/faers_xml/*.zip
+fine_tuning/datasets/FAERS_Generated/
+fine_tuning/datasets/FAERS_Generated_new/
+fine_tuning/models/
+fine_tuning/fine_models/
+fine_tuning/qwen_merged/
+models/
+fine_models/
+qwen_merged/
+
