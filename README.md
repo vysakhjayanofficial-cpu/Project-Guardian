@@ -129,9 +129,23 @@ graph TB
 
 ### 4. AI & LangGraph Core
 - **LangGraph Engines**:
-  - **Patient Summary Graph**: Runs file ingestion (OCR/Multimodal images/PDFs), queries SIDER RAG for active medications, and generates a concise, context-grounded history summary.
+  - **Patient Summary Graph**: Runs file ingestion (OCR/Multimodal images/PDFs), queries SIDER RAG for active medications, and generates a concise, context-grounded history summary. Helps with deeper understanding of patient data, correlations and causal analysis with various entities in patient history and effective communication to healthcare provider.
   - **SIDER RAG Graph**: A standard query-retrieve-generate RAG pipeline over Chroma DB drug records.
-  - **Symptom Analysis Graph**: Parses clinical logs to isolate matching symptoms and match severity.
+  - **Symptom Analysis Graph**: Parses clinical logs to isolate matching symptoms and match severity and distinguish between ailments with similar symptoms.
+  - **Patient Analysis Engine**: Fine tuned Qwen 32B model uses patient information to determine the intricate patterns potential multi-tiered causes and provide detailed information in the format described below.
+    1. "meddra_pt": the preferred term of the medical event
+    2. "meddra_soc": the system organ class of the medical event
+    3. "primary_event": the primary adverse event reported
+    4. "secondary_events": the secondary adverse events reported
+    5. "seriousness_assessment": the seriousness assessment of the medical event
+    6. "seriousness_rationale": the rationale for the seriousness assessment
+    7. "causality_assessment": the causality assessment of the medical event
+    8. "causality_rationale": the rationale for the causality assessment
+    9. "labeling_status": the labeling status of the medical event
+    10. "labeling_rationale": the rationale for the labeling status
+    11. "review_confidence_score": the confidence score of the review.
+
+  
 - **Agents & Chains**:
   - **PubMed Agent**: A tool-equipped agent that scrapes PubMed dynamically to research medical findings about patient conditions.
-  - **Image & PDF Chains**: Lightweight LangChain pipes utilizing multimodal LLM prompts to extract structured text from reports.
+  - **Image & PDF Chains**: Lightweight LangChain pipes utilizing multimodal LLM prompts to extract structured text from reports.       
